@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "kensa.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
 * main - monty code interpreter
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int counter = 0;
+	unsigned int kount = 0;
 
 	if (argc != 2)
 	{
@@ -32,14 +32,14 @@ int main(int argc, char *argv[])
 		content = NULL;
 		read_line = getline(&content, &size, file);
 		bus.content = content;
-		counter++;
+		kount++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute(content, &stack, kount, file);
 		}
 		free(content);
 	}
-	free_stack(stack);
+	frii_stuck(stack);
 	fclose(file);
 return (0);
 }
